@@ -2,7 +2,17 @@
 A simple Python program doing linear and polynomial regressions over dataset. 
 It handles univariate and multivariate regressions, using gradient descent or normal equation.
 
-The program can display real-time visualization of the current state of the learning algorithm (actual prediction, cost function, confidence intervals).
+### *Coming soon:* 
+_The program will display **real-time visualization** of the current state of the learning algorithm:_ 
+- *actual prediction*
+- *cost function*
+- *confidence intervals*
+
+# Motivation
+This program is based on an [introductory project](https://cdn.intra.42.fr/pdf/pdf/455/ft_linear_regression.fr.pdf "Suject here!") from the 42 curriculum and broadly enhanced. 
+The original project only required univariate linear regression.
+
+
 
 ## Screenshot
 
