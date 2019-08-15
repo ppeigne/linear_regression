@@ -7,16 +7,15 @@ class Statistics:
         self.len = len(self.dataset)
         self.count = self.count_()
         self.total = self.sum()
-        self.mean = self.total / self.len
+        self.mean = round(self.total / self.len, 5)
 
         self.q1, self.median, self.q3 = self.quartiles()
-       # self.median = self.median_measure()
         self.mode = self.mode_measure()
         self.min = self.min_()
         self.max = self.max_()
         self.range = self.max - self.min
-        self.variance = self.variance_measure()
-        self.std = math.sqrt(self.variance)
+        self.variance = round(self.variance_measure(), 5)
+        self.std = round(math.sqrt(self.variance), 5)
 
     def min_(self):
         # m = self.dataset[0]
@@ -100,20 +99,20 @@ class Statistics:
         return total / (self.len - 1)
 
     def print_stat(self):
-        print("--------------------------------------------")
-        print("Data set:\n%s\n" % sorted(self.dataset))
-        print("Measures of central tendency:")
-        print("- Mean: %s" % self.mean)
-        print("- Median: %s" % self.median)
-        print("- Mode: %s\n" % self.mode)
-        #print("Min: %s" % self.min)
-        #print("Max: %s" % self.max)
-        print("Measures of spread:")
-        print("- Range: %s" % self.range)
-        print("- Variance: %s" % self.variance)
-        print("- Standard deviation: %s\n" % self.std)
 
-        print("Quartiles:")
+        print("--------------------------------------------")
+        print("Spread:")
+        print("- Range: %s" % self.range)
+        print("- Var: %s" % self.variance)
+        print("- Std: %s\n" % self.std)
+
+     #   print("Data set:\n%s\n" % sorted(self.dataset))
+        print("Central tendency:")
+        print("- Mean: %s" % self.mean)
+        print("- Med: %s" % self.median)
+        print("- Mode: %s\n" % self.mode)
+
+        print("Distribution:")
         print("- Min: %s" % self.min)
         print("- 25%%: %s" % self.q1)
         print("- 50%%: %s" % self.median)
