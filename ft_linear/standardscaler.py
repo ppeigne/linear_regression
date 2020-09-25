@@ -6,7 +6,7 @@ class StandardScaler():
         self.mean = None
         self.std = None
 
-    def get_mean(self, df):
+    def _get_mean(self, df):
         if not self.all_alone:
             mean = df.mean(axis=0)
         else:
@@ -18,7 +18,7 @@ class StandardScaler():
             mean /= len_df
         return mean
         
-    def get_std(self, df):
+    def _get_std(self, df):
         if not self.all_alone:
             std = df.std(axis=0)
         else:
@@ -32,8 +32,8 @@ class StandardScaler():
         return std
 
     def fit(self, df):
-        self.mean = self.get_mean(df)
-        self.std = self.get_std(df)
+        self.mean = self._get_mean(df)
+        self.std = self._get_std(df)
 
     def transform(self, df):
         return (df - self.mean) / self.std

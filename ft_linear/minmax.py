@@ -6,7 +6,7 @@ class MinMaxScaler():
         self.min_ = None
         self.max_ = None
 
-    def get_min(self, df):
+    def _get_min(self, df):
         if not self.all_alone:
             min_ = df.min(axis=0)
         else:
@@ -19,7 +19,7 @@ class MinMaxScaler():
                         min_[j] = df[i,j]
         return min_
         
-    def get_max(self, df):
+    def _get_max(self, df):
         if not self.all_alone:
             max_ = df.max(axis=0)
         else:
@@ -34,8 +34,8 @@ class MinMaxScaler():
         return max_
 
     def fit(self, df):
-        self.min_ = self.get_min(np.copy(df))
-        self.max_ = self.get_max(np.copy(df))
+        self.min_ = self._get_min(np.copy(df))
+        self.max_ = self._get_max(np.copy(df))
 
     def transform(self, df):
         return (df - self.min_) / (self.max_ - self.min_)

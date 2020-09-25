@@ -8,7 +8,7 @@ class PolynomialFeatures():
         self.interaction_only = interaction_only
         self.include_bias = include_bias
     
-    def __rm_duplicate__(self, src, df):
+    def _rm_duplicate(self, src, df):
         src_len = src.shape[1]
         df_len = df.shape[1]
         for i in range(src_len - rm):
@@ -26,7 +26,7 @@ class PolynomialFeatures():
             res = tmp
             for j in range(df.shape[1]):
                 new_block = res[:,j].reshape(-1,1) * res[:,j:] # generate a new block of cols from res[:,j] times what remains in the df
-                new_block = self.__rm_duplicate__(tmp, new_block) # remove diplicated cols from the new block 
+                new_block = self._rm_duplicate(tmp, new_block) # remove duplicated cols from the new block 
                 tmp = np.concatenate((tmp, new_block), axis=1)                
         return tmp
 
