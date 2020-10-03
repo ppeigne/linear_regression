@@ -1,3 +1,16 @@
+# linear_regression
+A simple Python program doing **linear** and **polynomial regressions** over datasets and **ploting the learning process in real-time**.  
+This program is build upon my [TinySciKit library]().  
+
+![img](assets/multivar_reg.gif)
+
+
+
+# Motivation
+This program is based on an [introductory project](https://cdn.intra.42.fr/pdf/pdf/455/ft_linear_regression.fr.pdf "Suject here!") from the 42 curriculum and broadly enhanced.  
+The original project only required univariate linear regression.
+
+
 # Installation
 ## Install the required libraries: 
 `pip install -r requirements.txt`
