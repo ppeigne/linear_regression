@@ -82,7 +82,7 @@ Datasets can be found in `data/train` and `data/test` repositories.
 *  `data/train` contains the values to predict as a final column.
 *  `data/test` contains the feature needed to do the prediction.
 
-# Bonus:
+# Features
 ## Handle multivariate regression (i.e. more than one feature)
 
 ## Selection of the linear model to use
