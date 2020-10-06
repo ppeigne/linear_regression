@@ -1,5 +1,5 @@
 # linear_regression
-A simple Python program doing **linear** and **polynomial regressions** over datasets and **ploting the learning process in real-time**.  
+A simple Python program implementing **linear** and **polynomial regressions** over datasets and **ploting the learning process in real-time**.  
 This program is build upon my [TinySciKit library]().  
 
 ![img](assets/multivar_reg.gif)
@@ -8,8 +8,38 @@ This program is build upon my [TinySciKit library]().
 
 # Motivation
 This program is based on an [introductory project](https://cdn.intra.42.fr/pdf/pdf/455/ft_linear_regression.fr.pdf "Suject here!") from the 42 curriculum and broadly enhanced.  
-The original project only required univariate linear regression.
+The original project only required to implement univariate linear regression from scratch.
 
+# Requirements
+- numpy
+- pandas
+- matplotlib
+- joblib
+
+# Features
+## Multivariate regression
+
+## Linear models
+* Linear regression  
+  Example: `python3 train.py data/train/spacecraft_data.csv linear`
+
+* Ridge regression: linear regression using L2 regularization to limit overfitting  
+  Example: `python3 train.py data/train/spacecraft_data.csv ridge`
+
+## Scaling methods 
+* Standard scaler  
+  Example: `python3 train.py data/train/spacecraft_data.csv ridge standard`
+  
+* Min-max scaler  
+  Example: `python3 train.py data/train/spacecraft_data.csv linear minmax`
+
+## Polynomial models
+  * Generate polynomial features for each parameters of the dataset up to the given power
+  Example: `python3 train.py data/train/spacecraft_data.csv linear minmax 8`
+
+## Awesome real-time plot of the learning process (up to 15 features)
+
+## Save the predictions onto a .csv file
 
 # Installation
 ## Install the required libraries: 
@@ -29,7 +59,7 @@ The original project only required univariate linear regression.
   ```
 
 
-The training process can take more optional arguments (see bonus part below):  
+The training process can take more optional arguments (see features part above):  
 `python3 train.py [datapath] [model] [scaler] [polynomial_value]`
 *   Example:
     ```
@@ -81,28 +111,3 @@ The training process can take more optional arguments (see bonus part below):
 Datasets can be found in `data/train` and `data/test` repositories.
 *  `data/train` contains the values to predict as a final column.
 *  `data/test` contains the feature needed to do the prediction.
-
-# Bonus:
-## Handle multivariate regression (i.e. more than one feature)
-
-## Selection of the linear model to use
-* Linear regression  
-  Example: `python3 train.py data/train/spacecraft_data.csv linear`
-
-* Ridge regression: linear regression using regularization to limit overfitting  
-  Example: `python3 train.py data/train/spacecraft_data.csv ridge`
-
-## Selection of the preprocessing scaling method 
-* Standard scaler  
-  Example: `python3 train.py data/train/spacecraft_data.csv ridge standard`
-  
-* Min-max scaler  
-  Example: `python3 train.py data/train/spacecraft_data.csv linear minmax`
-
-## Can build a polynomial model instead of a linear one
-  * Generate polynomial features for each parameters of the dataset up to the given power
-  Example: `python3 train.py data/train/spacecraft_data.csv linear minmax 8`
-
-## Awesome real-time plot of the learning process (up to 15 features)
-
-## Save the predictions onto a .csv file
