@@ -33,6 +33,9 @@ The original project only required to implement univariate linear regression fro
 * Min-max scaler  
   Example: `python3 train.py data/train/spacecraft_data.csv linear minmax`
 
+Standard scaler | Minmax scaler
+:--------------:|:-------------:
+![img](assets/standard_scaler.gif) | ![img](assets/minmax_scaler.gif)
 ## Polynomial models
   * Generate polynomial features for each parameters of the dataset up to the given power
   Example: `python3 train.py data/train/spacecraft_data.csv linear minmax 8`
