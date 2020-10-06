@@ -28,10 +28,10 @@ The original project only required to implement univariate linear regression fro
 
 ## Scaling methods 
 * Standard scaler  
-  Example: `python3 train.py data/train/spacecraft_data.csv ridge standard`
+  Example: `python3 train.py data/train/data.csv linear standard`
   
 * Min-max scaler  
-  Example: `python3 train.py data/train/spacecraft_data.csv linear minmax`
+  Example: `python3 train.py data/train/data.csv linear minmax`
 
 Standard scaler | Minmax scaler
 :--------------:|:-------------:
