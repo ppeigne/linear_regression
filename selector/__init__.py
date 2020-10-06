@@ -45,8 +45,8 @@ class Pipeline():
             model.fit(X_)
             X_ = model.transform(X_)
         _, final_model = self.steps[-1] 
-        costs = final_model.fit(X_, y, True, X)
-        return costs
+        final_model.fit_with_plot(X_, y, X)
+        #return costs
 
     def predict(self, X):
         X_ = np.copy(X)
