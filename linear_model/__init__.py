@@ -18,6 +18,16 @@ class LinearRegression_():
     def _gradient(self, X_, y):
         return X_.T @ (X_ @ self.theta - y)
 
+    def fit(self, X, y):
+        X_ = self._add_intercept(X)
+        y_ = np.array(y).reshape((-1,1)) 
+        m, n = X_.shape
+        self.theta = np.zeros((n, 1))
+        self.cost = np.array([0, self.cost_(X_, y_)]).reshape(1, -1) 
+        for i in range(self.n_cycles + 1):
+            self.theta -= (self.alpha / m) * self._gradient(X_, y_) 
+        self.trained = True 
+
     def fit_with_plot(self, X, y, X_original=None):
         X_ = self._add_intercept(X)
         y_ = np.array(y).reshape((-1,1)) 
@@ -37,16 +47,6 @@ class LinearRegression_():
                                             np.array([i, self.cost_(X_, y_)]).reshape(1, -1)))
             if i % 1000 == 0:
                 update_real_time_plot(X_ @ self.theta, self.cost, plots)
-        self.trained = True 
-
-    def fit(self, X, y):
-        X_ = self._add_intercept(X)
-        y_ = np.array(y).reshape((-1,1)) 
-        m, n = X_.shape
-        self.theta = np.zeros((n, 1))
-        self.cost = np.array([0, self.cost_(X_, y_)]).reshape(1, -1) 
-        for i in range(self.n_cycles + 1):
-            self.theta -= (self.alpha / m) * self._gradient(X_, y_) 
         self.trained = True 
 
     def predict(self, X):
